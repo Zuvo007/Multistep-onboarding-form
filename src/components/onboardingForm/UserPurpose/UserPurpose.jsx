@@ -27,7 +27,7 @@ const [selectedCard , setSelectedCard] = useState(0);
           <div className={`myself-card${index === 0 ? '': ' margin-left-32'}${state.workspaceType === index ? ' violet-border': ''}`} onClick={() => {
             setSelectedCard(index)
             dispatch({type: 'workspacetype',payload: index})
-          }} key={index}>
+          }} key={index}>``
           <div>
           <img src={index === 0 ? myself: team} alt="user-purpose" className='myself-logo'/>
           </div>
