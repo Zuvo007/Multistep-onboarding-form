@@ -1,0 +1,22 @@
+
+.launch-onboarding-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-logo {
+    height: 80px;
+    width: 76px;
+}
+
+.welcome-text {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.info-text {
+    color: rgb(150, 146, 146);
+}

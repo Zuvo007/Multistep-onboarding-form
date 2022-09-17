@@ -1,0 +1,46 @@
+.work-space-container {
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.info-text {
+  color: rgb(150, 146, 146);
+}
+
+.details-container {
+  text-align: left;
+  width: 79%;
+  margin: 14px auto;
+}
+
+.lable {
+  font-size: 14px;
+  margin: 4px 0px;
+  color: rgb(94 91 91);
+}
+
+.optional-lable {
+  color: rgb(211, 210, 210);
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+}
+
+.base-url {
+  background: rgb(245 244 247);
+  width: 35%;
+  border-radius: 4px 0px 0px 4px;
+  color: rgb(162 162 162);
+}
+
+.w-65 {
+  width: 65%;
+  border-radius: 0px 4px 4px 0px;
+  margin-left: -2px;
+}

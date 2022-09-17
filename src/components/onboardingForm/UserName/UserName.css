@@ -1,0 +1,25 @@
+
+
+.user-name-container {
+text-align: center;
+}
+
+.welcome-text {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.info-text {
+    color: rgb(150, 146, 146);
+}
+
+.name-container {
+    text-align: left;
+}
+
+.lable {
+    font-size: 14px;
+    margin: 4px 0px;
+    color: rgb(94 91 91);
+}
+
