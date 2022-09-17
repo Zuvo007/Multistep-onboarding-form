@@ -35,7 +35,7 @@ function UserWorkSpaceDetails(props) {
         <div className="display-flex">
           <div className="my-1 flex rounded border border-gray-200 bg-white p-1 base-url">
             <div className="w-full appearance-none p-1 px-2 outline-none">
-              www.{state.workspaceName.substr(0,5) || 'Eden'}.com/
+              www.{state.workspaceName.substr(0,5) || 'eden'}.com/
             </div>
           </div>
           <div className="my-1 flex rounded border border-gray-200 bg-white p-1 w-65">

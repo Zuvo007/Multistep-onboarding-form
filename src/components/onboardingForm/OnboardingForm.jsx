@@ -48,9 +48,11 @@ function OnboardingForm(props) {
         <Stepper steps={steps} currentStep={currentStep} setCurrentStep={setCurrentStep} />
         </div>
         <div>{displaySteps(currentStep)}</div>
-        <div className="create-workspace-btn cursor-pointer mt-4" onClick={() => setCurrentStep(currentStep + 1)}>{currentStep === steps.length? `Launch ${state.workspaceName}` : 'Create Workspace'}</div>
+        <div className=" w-full appearance-none p-1 px-2 create-workspace-btn horizontal w-36 cursor-pointer my-4" onClick={() => setCurrentStep(currentStep + 1)}>{currentStep === steps.length? `Launch ${state.workspaceName}` : 'Create Workspace'}</div>
     </div>
   );
 }
 
 export default OnboardingForm;
+
+
