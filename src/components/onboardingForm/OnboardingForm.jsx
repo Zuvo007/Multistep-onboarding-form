@@ -12,7 +12,17 @@ import "./OnboardingForm.css";
 
 function OnboardingForm(props) {
   const { state, dispatch } = props;
+  const [currentStep, setCurrentStep] = useState(1);
+const [error,setError] = useState(false);
 
+
+const valdation = () => {
+  switch(currentStep) {
+    case 1: return state.userName && state.displayName
+    case 2: return state.workspaceName
+    default: return true
+  }
+}
   const handleNextStep = () => {
     if (currentStep === steps.length) {
       toast.success("Your workspace launched successfully!", {
@@ -26,22 +36,27 @@ function OnboardingForm(props) {
       });
       return;
     }
-    setCurrentStep(currentStep + 1);
+    if(valdation()) {
+      setError(false);
+      setCurrentStep(currentStep + 1);
+    } else {
+      setError(true);
+    }
+ 
   };
 
-  console.log(state);
-  const [currentStep, setCurrentStep] = useState(1);
+ 
 
   const steps = ["Name", "WorkSpace Details", "Purpose", "Complete"];
 
   const displaySteps = (step) => {
     switch (step) {
       case 1:
-        return <UserName state={state} dispatch={dispatch} />;
+        return <UserName state={state} dispatch={dispatch} error={error}/>;
       case 2:
-        return <UserWorkSpaceDetails state={state} dispatch={dispatch} />;
+        return <UserWorkSpaceDetails state={state} dispatch={dispatch} error={error} />;
       case 3:
-        return <UserPurpose state={state} dispatch={dispatch} />;
+        return <UserPurpose state={state} dispatch={dispatch}  />;
       case 4:
         return <LaunchOnboarding state={state} dispatch={dispatch} />;
       default:
@@ -71,6 +86,16 @@ function OnboardingForm(props) {
           steps={steps}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
+          handleStepper={(step) => {
+            if(valdation() || step < currentStep) {
+              setError(false);
+              console.log("success",step)
+              setCurrentStep(step);
+            } else {
+              console.log("error",step)
+              setError(true);
+            }
+          }}
         />
       </div>
       <div>{displaySteps(currentStep)}</div>

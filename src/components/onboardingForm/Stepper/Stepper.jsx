@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import './Stepper.css'
 
 const Stepper = (props) => {
-  const { steps , currentStep,setCurrentStep } = props;
+  const { steps , currentStep,setCurrentStep,handleStepper } = props;
   const [newStep, setNewStep] = useState([]);   
   const stepsRef = useRef();
 
@@ -73,7 +73,7 @@ const Stepper = (props) => {
             ? "w-full flex items-center cursor-pointer"
             : "flex items-center cursor-pointer"
         }
-        onClick={() => setCurrentStep(index + 1)}
+        onClick={() => handleStepper(index + 1)}
       >
         <div className="relative flex flex-col items-center">
           <div

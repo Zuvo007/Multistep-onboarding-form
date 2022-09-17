@@ -2,7 +2,7 @@ import React from "react";
 import "./UserWorkSpaceDetails.css";
 
 function UserWorkSpaceDetails(props) {
-  const { state, dispatch } = props;
+  const { state, dispatch,error } = props;
   return (
     <div className="work-space-container">
       <div className="welcome-text my-2">
@@ -27,6 +27,7 @@ function UserWorkSpaceDetails(props) {
             className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
           />
         </div>
+        { error && !state.workspaceName && <div className="error-text"> Please enter your workspace name</div>}
       </div>
       <div className="details-container my-4">
         <div className="lable">

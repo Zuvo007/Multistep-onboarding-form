@@ -2,7 +2,7 @@ import React from "react";
 import "./UserName.css";
 
 function UserName(props) {
-  const { state, dispatch } = props;
+  const { state, dispatch ,error} = props;
   return (
     <div className="user-name-container">
       <div className="welcome-text my-2">Welcome! First things first...</div>
@@ -23,6 +23,7 @@ function UserName(props) {
             className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
           />
         </div>
+      { error && !state.userName && <div className="error-text"> Please enter your full name</div>}
       </div>
       <div className="name-container my-4">
         <div className="lable">Display Name</div>
@@ -40,6 +41,7 @@ function UserName(props) {
             className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
           />
         </div>
+     {  error && !state.displayName &&  <div className="error-text"> Please enter your display name</div>}
       </div>
     </div>
   );
