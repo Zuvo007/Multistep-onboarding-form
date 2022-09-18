@@ -1,6 +1,6 @@
 
-import './App.css';
 import OnboardingFormContainer from './containers/onboardingFormContainer/OnboardingFormContainer';
+import './App.css';
 
 function App() {
   return (

@@ -13,16 +13,18 @@ import "./OnboardingForm.css";
 function OnboardingForm(props) {
   const { state, dispatch } = props;
   const [currentStep, setCurrentStep] = useState(1);
-const [error,setError] = useState(false);
+  const [error, setError] = useState(false);
 
-
-const valdation = () => {
-  switch(currentStep) {
-    case 1: return state.userName && state.displayName
-    case 2: return state.workspaceName
-    default: return true
-  }
-}
+  const valdation = () => {
+    switch (currentStep) {
+      case 1:
+        return state.userName && state.displayName;
+      case 2:
+        return state.workspaceName;
+      default:
+        return true;
+    }
+  };
   const handleNextStep = () => {
     if (currentStep === steps.length) {
       toast.success("Your workspace launched successfully!", {
@@ -36,27 +38,24 @@ const valdation = () => {
       });
       return;
     }
-    if(valdation()) {
+    if (valdation()) {
       setError(false);
       setCurrentStep(currentStep + 1);
     } else {
       setError(true);
     }
- 
   };
-
- 
 
   const steps = ["Name", "WorkSpace Details", "Purpose", "Complete"];
 
   const displaySteps = (step) => {
     switch (step) {
       case 1:
-        return <UserName state={state} dispatch={dispatch} error={error}/>;
+        return <UserName state={state} dispatch={dispatch} error={error} />;
       case 2:
-        return <UserWorkSpaceDetails state={state} dispatch={dispatch} error={error} />;
+        return <UserWorkSpaceDetails state={state} dispatch={dispatch} error={error} />
       case 3:
-        return <UserPurpose state={state} dispatch={dispatch}  />;
+        return <UserPurpose state={state} dispatch={dispatch} />;
       case 4:
         return <LaunchOnboarding state={state} dispatch={dispatch} />;
       default:
@@ -87,7 +86,7 @@ const valdation = () => {
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
           handleStepper={(step) => {
-            if(valdation() || step < currentStep) {
+            if (valdation() || step < currentStep) {
               setError(false);
               setCurrentStep(step);
             } else {

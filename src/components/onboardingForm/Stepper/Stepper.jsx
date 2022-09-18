@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import './Stepper.css'
+import "./Stepper.css";
 
 const Stepper = (props) => {
-  const { steps , currentStep,setCurrentStep,handleStepper } = props;
-  const [newStep, setNewStep] = useState([]);   
+  const { steps, currentStep, setCurrentStep, handleStepper } = props;
+  const [newStep, setNewStep] = useState([]);
   const stepsRef = useRef();
 
   const updateStep = (stepNumber, steps) => {
@@ -47,16 +47,18 @@ const Stepper = (props) => {
   };
 
   useEffect(() => {
-    const stepsState = steps && steps.map((step, index) =>
-      Object.assign(
-        {},
-        {
-          completed: false,
-          highlighted: index === 0 ? true : false,
-          selected: index === 0 ? true : false,
-        }
-      ) 
-    );
+    const stepsState =
+      steps &&
+      steps.map((step, index) =>
+        Object.assign(
+          {},
+          {
+            completed: false,
+            highlighted: index === 0 ? true : false,
+            selected: index === 0 ? true : false,
+          }
+        )
+      );
 
     stepsRef.current = stepsState;
     const current = updateStep(currentStep - 1, stepsRef.current);
@@ -99,9 +101,7 @@ const Stepper = (props) => {
   });
 
   return (
-    <div className="flex justify-between items-center">
-      {stepsDisplay}
-    </div>
+    <div className="flex justify-between items-center">{stepsDisplay}</div>
   );
 };
 export default Stepper;

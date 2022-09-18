@@ -2,7 +2,7 @@ import React from "react";
 import "./UserWorkSpaceDetails.css";
 
 function UserWorkSpaceDetails(props) {
-  const { state, dispatch,error } = props;
+  const { state, dispatch, error } = props;
   return (
     <div className="work-space-container">
       <div className="welcome-text my-2">
@@ -27,7 +27,9 @@ function UserWorkSpaceDetails(props) {
             className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
           />
         </div>
-        { error && !state.workspaceName && <div className="error-text"> Please enter your workspace name</div>}
+        {error && !state.workspaceName && (
+          <div className="error-text"> Please enter your workspace name</div>
+        )}
       </div>
       <div className="details-container my-4">
         <div className="lable">
@@ -36,19 +38,18 @@ function UserWorkSpaceDetails(props) {
         <div className="display-flex">
           <div className="my-1 flex rounded border border-gray-200 bg-white p-1 base-url">
             <div className="w-full appearance-none p-1 px-2 outline-none">
-              <div> www.{state.workspaceName.substr(0,5) || 'eden'}.com/</div>
+              <div> www.{state.workspaceName.substr(0, 5) || "eden"}.com/</div>
             </div>
           </div>
           <div className="my-1 flex rounded border border-gray-200 bg-white p-1 w-65">
-            
             <input
-             onChange={(event) => {
-              dispatch({
-                type: "workspaceurl",
-                payload: event.target.value,
-              });
-            }}
-            value={state.workSpaceUrl}
+              onChange={(event) => {
+                dispatch({
+                  type: "workspaceurl",
+                  payload: event.target.value,
+                });
+              }}
+              value={state.workSpaceUrl}
               name="username"
               placeholder="Steve"
               className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
