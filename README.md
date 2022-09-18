@@ -1,6 +1,10 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is based on a multi step form wizard , which is highly customisable with a great performance.
+The number of steps and on each step the component to be rendered can be customisble as per the requirement.
+
+Attaching some screen shots for better understanding.
 
 ## Available Scripts
 
