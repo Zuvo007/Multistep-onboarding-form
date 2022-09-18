@@ -100,7 +100,7 @@ const Stepper = (props) => {
   });
 
   return (
-    <div className="mx-4 p-4 flex justify-between items-center">
+    <div className="flex justify-between items-center">
       {stepsDisplay}
     </div>
   );
