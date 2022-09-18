@@ -5,6 +5,7 @@ import UserWorkSpaceDetails from "./UserWorkSpaceDetails/UserWorkSpaceDetails";
 import UserPurpose from "./UserPurpose/UserPurpose";
 import LaunchOnboarding from "./LaunchOnboarding/LaunchOnboarding";
 import { ToastContainer, toast } from "react-toastify";
+import { steps } from "./constants";
 import "react-toastify/dist/ReactToastify.css";
 import Stepper from "./Stepper/Stepper";
 
@@ -15,6 +16,9 @@ function OnboardingForm(props) {
   const [currentStep, setCurrentStep] = useState(1);
   const [error, setError] = useState(false);
 
+  /**
+   * validates whether the current step's required fields are filled up or not
+   */
   const valdation = () => {
     switch (currentStep) {
       case 1:
@@ -25,6 +29,10 @@ function OnboardingForm(props) {
         return true;
     }
   };
+
+  /**
+   * Controller for going to next step
+   */
   const handleNextStep = () => {
     if (currentStep === steps.length) {
       toast.success("Your workspace launched successfully!", {
@@ -36,6 +44,7 @@ function OnboardingForm(props) {
         draggable: true,
         progress: undefined,
       });
+      console.log("Launch api called with the form data: ", state);
       return;
     }
     if (valdation()) {
@@ -46,14 +55,23 @@ function OnboardingForm(props) {
     }
   };
 
-  const steps = ["Name", "WorkSpace Details", "Purpose", "Complete"];
-
+  /**
+   * Return the component for the current step
+   * @param  {Number} step the current step number
+   *
+   */
   const displaySteps = (step) => {
     switch (step) {
       case 1:
         return <UserName state={state} dispatch={dispatch} error={error} />;
       case 2:
-        return <UserWorkSpaceDetails state={state} dispatch={dispatch} error={error} />
+        return (
+          <UserWorkSpaceDetails
+            state={state}
+            dispatch={dispatch}
+            error={error}
+          />
+        );
       case 3:
         return <UserPurpose state={state} dispatch={dispatch} />;
       case 4:

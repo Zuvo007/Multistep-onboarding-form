@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import myself from "../../../images/myself.png";
+import { cards } from "../constants";
 import team from "../../../images/team.png";
 import "./UserPurpose.css";
 
 function UserPurpose(props) {
   const { state, dispatch } = props;
   const [selectedCard, setSelectedCard] = useState(0);
-  const cards = [
-    {
-      lable: "For myself",
-      description: " Write better.Think more clearly.Stay organized.",
-    },
-    {
-      lable: "With my team",
-      description: " Wikies docs task & projects all in one place.",
-    },
-  ];
+  
   return (
     <div className="user-purpose-container">
       <div className="welcome-text my-2">How are you planning to use Eden?</div>

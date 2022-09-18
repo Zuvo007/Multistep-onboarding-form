@@ -2,10 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Stepper.css";
 
 const Stepper = (props) => {
-  const { steps, currentStep, setCurrentStep, handleStepper } = props;
+  const { steps, currentStep, handleStepper } = props;
   const [newStep, setNewStep] = useState([]);
   const stepsRef = useRef();
 
+  /**
+   * Return the state of all the steps currently
+   * @param  {Number} stepNumber the current step number
+   * @param  {Number} steps the list of steps
+   */
   const updateStep = (stepNumber, steps) => {
     const newSteps = [...steps];
     let count = 0;
@@ -49,7 +54,7 @@ const Stepper = (props) => {
   useEffect(() => {
     const stepsState =
       steps &&
-      steps.map((step, index) =>
+      steps.map((index) =>
         Object.assign(
           {},
           {
@@ -64,6 +69,8 @@ const Stepper = (props) => {
     const current = updateStep(currentStep - 1, stepsRef.current);
     setNewStep(current);
   }, [steps, currentStep]);
+
+
 
   const stepsDisplay = newStep.map((step, index) => {
     return (
