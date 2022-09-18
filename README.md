@@ -6,6 +6,24 @@ The number of steps and on each step the component to be rendered can be customi
 
 Attaching some screen shots for better understanding.
 
+<img width="513" alt="Screenshot 2022-09-18 at 4 23 47 PM" src="https://user-images.githubusercontent.com/53573536/190898633-fa25d82c-990e-4707-a33c-2e66ee267f72.png">
+
+<img width="513" alt="Screenshot 2022-09-18 at 4 24 32 PM" src="https://user-images.githubusercontent.com/53573536/190898665-b6637f53-15ec-49af-9bec-4f4f27baf672.png">
+
+<img width="513" alt="Screenshot 2022-09-18 at 4 25 08 PM" src="https://user-images.githubusercontent.com/53573536/190898672-fdd906e6-245f-42f5-b6bf-2ce8253ae7ea.png">
+
+<img width="513" alt="Screenshot 2022-09-18 at 4 25 40 PM" src="https://user-images.githubusercontent.com/53573536/190898725-6e60d30d-033e-4796-90c9-6a17614a1763.png">
+
+
+
+## Performance Report 
+
+<img width="1262" alt="Screenshot 2022-09-18 at 4 31 39 PM" src="https://user-images.githubusercontent.com/53573536/190898874-6e5d1771-f743-4a04-b0c5-4741b0a5b5b2.png">
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
