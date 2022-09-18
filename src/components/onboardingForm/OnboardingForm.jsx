@@ -89,10 +89,8 @@ const valdation = () => {
           handleStepper={(step) => {
             if(valdation() || step < currentStep) {
               setError(false);
-              console.log("success",step)
               setCurrentStep(step);
             } else {
-              console.log("error",step)
               setError(true);
             }
           }}
